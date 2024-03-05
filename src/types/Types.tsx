@@ -3,3 +3,10 @@ export interface greetProops {
     messageCount: number;
     isLogin: boolean;
 }
+
+export interface personProps {
+    name: {
+        first: string;
+        last: string;
+    };
+}
