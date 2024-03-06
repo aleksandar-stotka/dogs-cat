@@ -10,3 +10,9 @@ export interface personProps {
         last: string;
     };
 }
+export interface personNames {
+    names: {
+        first: string;
+        last: string;
+    }[]
+}   
