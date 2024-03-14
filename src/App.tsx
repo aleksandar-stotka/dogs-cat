@@ -3,6 +3,7 @@ import './App.css';
 import Greet from './components/Greet';
 import Person from './components/Person';
 import PersonList from './components/PersonList';
+import Heading from './components/Heading';
 
 function App() {
   const personName ={
@@ -28,6 +29,7 @@ function App() {
       <Greet name="aleksandar" messageCount={10} isLogin={false}/>
       <Person name={personName}/>
       <PersonList names={list}/>
+      <Heading/>
     </div>
   );
 }
