@@ -1,11 +1,10 @@
 import React from 'react';
-import { personProps } from '../types/Types'
 
-function Person(props: personProps) {
+
+function Person() {
     return (
         <>
-         <div>{props.name.first}</div>
-         <p>{props.name.last}</p>
+        <p>person</p>
         </>
        
     );
