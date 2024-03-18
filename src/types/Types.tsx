@@ -16,3 +16,10 @@ export interface personNames {
         last: string;
     }[]
 }   
+export interface links {
+    links: {
+        id: number;
+        text: string;
+        url:string
+    }[]
+}   
