@@ -16,7 +16,7 @@ export interface personNames {
         last: string;
     }[]
 }   
-export interface links {
+export interface linksNav {
     links: {
         id: number;
         text: string;
