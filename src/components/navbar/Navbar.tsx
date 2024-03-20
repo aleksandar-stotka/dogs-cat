@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaHome } from 'react-icons/fa';
 import { links } from '../../utils/constans';
 // Import the linksNav interface from types
 import { linksNav } from '../../types/Types';

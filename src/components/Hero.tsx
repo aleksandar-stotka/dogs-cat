@@ -3,7 +3,9 @@ import React from 'react'
 function Hero() {
   return (
     <div>
-      <h2>Hero</h2>
+     <h1 className="text-3xl font-bold underline">
+      Hello world!
+    </h1>
     </div>
   )
 }
