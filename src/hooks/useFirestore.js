@@ -3,7 +3,7 @@
 //late rwe also use this hook to delete dociment for collection
 
 import { useReducer, useState, useEffect } from "react";
-import { projectFirestore } from "../firebase/firebase"; ///use this everytime if we want interact whith projectFirestore
+import { projectFirestore, timestamp } from "../firebase/firebase"; ///use this everytime if we want interact whith projectFirestore
 
 let initialState = {
     document: null,
@@ -54,8 +54,8 @@ export const useFirestore = (collection) => {
      dispatch({type:"IS_PENDING"})
 
      try {
-        
-            const addedDocument = await  ref.add(doc)  //represent object document i want to save, to check if the isCanceled it false 
+            const createdAt = timestamp.fromDate(new Date())
+            const addedDocument = await  ref.add({...doc,createdAt})  //represent object document i want to save, to check if the isCanceled it false 
     
             dispatchIfNotCancelled({type:'ADDED_DOCUMENT',payload: addedDocument})
         
