@@ -1,8 +1,17 @@
 import firebase from 'firebase/app'
 import 'firebase/firestore'
 import 'firebase/auth'
+interface FirebaseConfig {
+  apiKey: string;
+  authDomain: string;
+  projectId: string;
+  storageBucket: string;
+  messagingSenderId: string;
+  appId: string;
+}
 
-const firebaseConfig = {
+
+const firebaseConfig:FirebaseConfig  = {
     apiKey: "AIzaSyCbKB4xYmTNujY__4QsDn0qikiLgakBxWA",
     authDomain: "avto-page.firebaseapp.com",
     projectId: "avto-page",

@@ -1,16 +1,22 @@
-import React, { useState } from 'react';
-
+import  { useState } from 'react';
+import useSignUp from '../../../hooks/useSignUp';
 const SignupForm = () => {
-  const [name, setName] = useState('');
+  const [displayName, setDisplayName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const {signup,isPending,error} = useSignUp()
+
+
+
+  
 
   const handleSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     // Handle form submission here
-    console.log('Name:', name);
-    console.log('Email:', email);
-    console.log('Password:', password);
+    signup(email,password, displayName)
+   
+      
   };
 
   return (
@@ -22,8 +28,8 @@ const SignupForm = () => {
           <input
             type="text"
             id="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            value={displayName}
+            onChange={(e) => setDisplayName(e.target.value)}
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             placeholder="Enter your name"
             required
@@ -54,13 +60,15 @@ const SignupForm = () => {
           />
         </div>
         <div className="flex items-center justify-between">
-          <button
+          {!isPending && <button
             type="submit"
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           >
             Sign Up
-          </button>
+          </button>}
         </div>
+        {isPending && <button disabled>loading</button>}
+        {error && <p>{error}</p>}
       </form>
     </div>
   );
