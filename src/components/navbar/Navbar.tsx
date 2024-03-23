@@ -7,6 +7,7 @@ import { linksNav } from '../../types/Types';
 function Navbar() {
     // Declare a variable of type linksNav
     const navbarLinks: linksNav = { links };
+    const {logout} =useLoguot()
 
     return (
         <div>
@@ -21,6 +22,7 @@ function Navbar() {
                     );
                 })}
             </div>
+       <button onClick={logout}>Logout</button>
         </div>
     );
 }

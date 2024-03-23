@@ -1,4 +1,3 @@
-import { stat } from "fs";
 import { useReducer, createContext, ReactNode, Dispatch } from "react";
 
 interface User {
@@ -26,6 +25,9 @@ export const authReducer = (state: AuthState, action: Action): AuthState => {
   switch (action.type) {
     case "LOGIN":
       return { ...state, user: action.payload };
+
+    
+      
 
     // Add cases for other actions if necessary
 
