@@ -9,7 +9,6 @@ function Navbar() {
     // Declare a variable of type linksNav
     const navbarLinks: linksNav = { links };
     const {logout} =useLoguot()
-    console.log(logout)
 
     return (
         <div>

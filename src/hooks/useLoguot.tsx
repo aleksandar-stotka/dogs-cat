@@ -10,7 +10,7 @@ function useLoguot() {
 
     const logout = async () => {
         setError(null)
-        setIsPending(false)
+        setIsPending(true)
 
         try {
             await projectAuth.signOut()
@@ -25,6 +25,7 @@ function useLoguot() {
             if(err) {
                 console.log(err)
                 setIsPending(false)
+                setError(null)
             }
         }
     }
