@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
+import useLogin from '../../hooks/useLogin';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const {login,isPending,error} = useLogin()
 
   const handleSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     // Handle form submission here
-    console.log('Email:', email);
-    console.log('Password:', password);
+    login(email,password)
   };
 
   return (
@@ -40,12 +41,14 @@ const LoginForm = () => {
           />
         </div>
         <div className="flex items-center justify-between">
-          <button
+          {!isPending && <button
             type="submit"
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           >
             Login
-          </button>
+          </button>}
+          {isPending && <button disabled>Loading...</button>}
+          {error && <p>{error}</p>}
           
         </div>
       </form>
