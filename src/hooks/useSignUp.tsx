@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { projectAuth } from '../firebase/firebase';
 import { useAuthContext } from './useAuthContext';
 interface SignUpResult {
@@ -8,6 +8,7 @@ interface SignUpResult {
 }
 
 export default function useSignUp(): SignUpResult {
+    const [isCancelled,setIsCancelled] = useState<boolean>(false)
     const [isPending, setIsPending] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
     const {dispatch} =useAuthContext()
@@ -32,21 +33,24 @@ export default function useSignUp(): SignUpResult {
             } else {
                 throw new Error('User data not available');
             }
-            
-            setIsPending(false);
-            setError(null);
+              if(!isCancelled) {
+                setIsPending(false);
+                setError(null);
+
+              }
+           
         } catch (err) {
-            if (err instanceof Error) {
-                console.log(err.message);
-                setError(err.message);
+            if (!isCancelled) {
+                console.log(err);
+                setError(null);
                 setIsPending(false);
-            } else {
-                console.error('Error object is not an instance of Error:', err);
-                setError('An unknown error occurred.');
-                setIsPending(false);
-            }
+            } 
         }
     };
+    useEffect(() => {
+        return () => setIsCancelled(false)
+
+    },[])
 
     return { signup, error, isPending };
 }

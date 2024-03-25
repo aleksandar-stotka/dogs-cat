@@ -12,6 +12,12 @@ function Navbar() {
 
     return (
         <div>
+             <Link to='/Signup'>
+                Signup
+            </Link>
+            <Link to='/login'>
+                Login
+            </Link>
            
             <div className='nav-links'>
                 {navbarLinks.links.map(link => {

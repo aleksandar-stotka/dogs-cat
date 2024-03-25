@@ -31,7 +31,7 @@ export const authReducer = (state: AuthState, action: Action): AuthState => {
 
     
       
-
+      
     // Add cases for other actions if necessary
 
     default:

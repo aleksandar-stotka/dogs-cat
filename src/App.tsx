@@ -5,7 +5,7 @@ import Sidebar from './components/Sidebar';
 import About from './pages/About';
 import LoginForm from './pages/login/Login';
 import Products from './pages/Products';
-import Signup from './pages/login/signup/Signup';
+import Signup from './pages/signup/Signup';
 
 function App() {
   return (
