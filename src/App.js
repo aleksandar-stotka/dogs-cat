@@ -8,6 +8,7 @@ import Products from './pages/Products';
 import Signup from './pages/signup/Signup';
 
 function App() {
+  
   return (
     <Router>
       <Navbar/>
@@ -16,7 +17,7 @@ function App() {
         <Route path="/" element={<Home  />} />
         <Route path="/about" element={<About  />} />
         <Route path="/products" element={<Products />} />
-        <Route path="/login" element={<LoginForm  />} />
+          <Route path="/login" element={<LoginForm  />} />
         <Route path="/signup" element={<Signup />} />
       </Routes>
     </Router>

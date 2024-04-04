@@ -51,6 +51,7 @@ export default function useSignUp(): SignUpResult {
         return () => setIsCancelled(false)
 
     },[])
+  
 
     return { signup, error, isPending };
 }

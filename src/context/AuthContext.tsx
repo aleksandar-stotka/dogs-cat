@@ -1,14 +1,11 @@
 import { useReducer, createContext, ReactNode, Dispatch } from "react";
+import { AuthState } from "./AuthState";
 
-interface User {
+export interface User {
   
  
   id: string;
   username: string;
-}
-
-interface AuthState {
-  user: User | null;
 }
 
 interface Action {
@@ -41,7 +38,7 @@ export const authReducer = (state: AuthState, action: Action): AuthState => {
 
 export const AuthContextProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [state, dispatch] = useReducer(authReducer, {
-    user: null
+  user: null
   });
   console.log('Auth context state' ,state)
 

@@ -4,13 +4,7 @@
 
 import { useReducer, useState, useEffect } from "react";
 import { projectFirestore, timestamp } from "../firebase/firebase"; ///use this everytime if we want interact whith projectFirestore
-
-let initialState = {
-    document: null,
-    isPending:false,
-    error: null,
-    success: null                  //when make some kind of request to add new Document when firestore send back response this is document thet i created
-}
+import { initialState } from "./initialState";
 
 const firestoreReducer = (state,action) => {///action is type of dispatch that i created, when create action specify a type and than its inside of this reducer
   switch (action.type) {
@@ -41,7 +35,7 @@ export const useFirestore = (collection) => {
  const ref = projectFirestore.collection(collection)  //late use ref.add to delete document add document
  // add document
 
- // only dispatch if !isCancelled
+ // only dispatch if !isCancelledconst
  const dispatchIfNotCancelled = (action) => {
     if(!isCancelled) {
         dispatch(action)
