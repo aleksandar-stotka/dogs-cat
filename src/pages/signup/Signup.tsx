@@ -14,7 +14,7 @@ const SignupForm = () => {
   const handleSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     // Handle form submission here
-    signup(email,password, displayName)
+    signup(email,password,displayName)
    
       
   };

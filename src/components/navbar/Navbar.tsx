@@ -3,8 +3,8 @@ import { links } from '../../utils/constans';
 // Import the linksNav interface from types
 import useLoguot from '../../hooks/useLoguot';
 
+
 function Navbar() {
-    
     
     const {logout} =useLoguot()
 

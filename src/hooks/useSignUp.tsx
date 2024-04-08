@@ -1,12 +1,7 @@
 import { useEffect, useState } from 'react';
 import { projectAuth } from '../firebase/firebase';
 import { useAuthContext } from './useAuthContext';
-interface SignUpResult {
-    signup: (email: string, password: string, displayName: string) => Promise<void>;
-    error: string | null;
-    isPending: boolean;
-}
-
+import { SignUpResult } from '../types/Types';
 export default function useSignUp(): SignUpResult {
     const [isCancelled,setIsCancelled] = useState<boolean>(false)
     const [isPending, setIsPending] = useState<boolean>(false);

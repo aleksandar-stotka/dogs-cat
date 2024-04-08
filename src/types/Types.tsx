@@ -1,26 +1,9 @@
-export interface greetProops {
-    name: string;
-    messageCount: number;
-    isLogin: boolean;
-}
 
-export interface personProps {
-    name: {
-        first: string;
-        last: string;
-    };
-}
-export interface personNames {
-    names: {
-        first: string;
-        last: string;
-    }[]
-}   
 export interface linksNav {
     links: {
         id: number;
         text: string;
-        url:string
+        url:string      
     }[]
 }   
 export interface Pet {
