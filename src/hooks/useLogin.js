@@ -5,13 +5,13 @@ import { useState,useEffect } from 'react'
 
 function useLogin() {
    
-    const [isPending,setIsPending] = useState<boolean>(false)
-    const [error,setError] =useState<string | null>(null)
-    const [isCancelled,setIsCancelled] = useState<boolean>(false)
+    const [isPending,setIsPending] = useState(false)
+    const [error,setError] =useState(null)
+    const [isCancelled,setIsCancelled] = useState(false)
     
     const {dispatch} =useAuthContext()
 
-    const login = async (email:string,password:string) => {
+    const login = async (email,password) => {
         setError(null)
         setIsPending(true)
 

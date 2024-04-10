@@ -3,10 +3,10 @@ import { useAuthContext } from "./useAuthContext"
 import { projectAuth } from "../firebase/firebase"
 
 function useLoguot() {
-    const [isCancelled,setIsCancelled] = useState<boolean>(false)
+    const [isCancelled,setIsCancelled] = useState(false)
 
-    const [isPending,setIsPending] = useState<boolean>(false)
-    const [error,setError] =useState<string | null>(null)
+    const [isPending,setIsPending] = useState(false)
+    const [error,setError] =useState(null)
     
     const {dispatch} =useAuthContext()
 
